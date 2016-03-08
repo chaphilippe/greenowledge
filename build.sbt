@@ -1,17 +1,23 @@
-scalaVersion := "2.11.6"
+
+name := "greenowledge"
+
+version := "1.0"
+
+scalaVersion := "2.11.5"
+
+resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
+
+enablePlugins(JavaAppPackaging)
 
 libraryDependencies ++= {
-  val akkaV = "2.3.9"
-  val sprayV = "1.3.3"
+  val akkaVersion = "2.3.9"
+  val sprayVersion = "1.3.2"
   Seq(
-    "io.spray"            %%  "spray-can"     % sprayV,
-    "io.spray"            %%  "spray-routing" % sprayV,
-    "io.spray"            %%  "spray-testkit" % sprayV  % "test",
-    "com.typesafe.akka"   %%  "akka-actor"    % akkaV,
-    "com.typesafe.akka"   %%  "akka-testkit"  % akkaV   % "test",
+    "io.spray"            %%  "spray-can"     % sprayVersion,
+    "io.spray"            %%  "spray-routing" % sprayVersion,
+    "io.spray"            %%  "spray-testkit" % sprayVersion  % "test",
+    "com.typesafe.akka"   %%  "akka-actor"    % akkaVersion,
+    "com.typesafe.akka"   %%  "akka-testkit"  % akkaVersion   % "test",
     "org.specs2"          %%  "specs2-core"   % "2.3.11" % "test"
   )
 }
-
-resolvers += "spray repo" at "http://repo.spray.io"
-resolvers += "Akka Snapshot Repository" at "http://repo.akka.io/snapshots/"
